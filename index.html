@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CODETA | Codenya Kita</title>
+
+    <!-- Tambahkan baris ini untuk Icon di Title Browser -->
+    <link rel="icon" type="image/png" href="src/assets/images/C-Bulat.png">
+    <!-- Opsi tambahan untuk perangkat Apple/iOS -->
+    <link rel="apple-touch-icon" href="src/assets/images/C-Bulat.png">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome untuk Icon Sosmed -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="src/style/global.css">
+    <!-- WAJIB ADA AGAR IKON MUNCUL -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        .filter-btn.active {
+            background-color: #2563eb;
+            color: white;
+            border-color: #2563eb;
+        }
+        .glass { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); }
+        .card-shadow { transition: all 0.3s ease; }
+        .card-shadow:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0, 102, 255, 0.1); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 overflow-x-hidden font-['Plus_Jakarta_Sans']">
+
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 w-full z-50 glass border-b border-slate-200 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-2 flex justify-between items-center">
+            <!-- Logo Section -->
+            <a href="#home" class="flex items-center">
+                <img src="src/assets/images/Full-Trans.png" alt="CODETA Logo" class="h-16 md:h-20 w-auto object-contain">
+            </a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex gap-8 font-bold text-slate-600 uppercase text-[11px] tracking-widest">
+                <a href="#home" class="hover:text-blue-600 transition">Home</a>
+                <a href="#services" class="hover:text-blue-600 transition">Layanan</a>
+                <a href="#portfolio" class="hover:text-blue-600 transition">Portfolio</a>
+                <a href="#advantages" class="hover:text-blue-600 transition">Keunggulan</a>
+                <a href="#pricing" class="hover:text-blue-600 transition">Harga</a>
+            </div>
+            
+            <!-- Desktop CTA -->
+            <a href="https://wa.me/085150762029" class="hidden md:block bg-blue-600 text-white px-6 py-3 rounded-full font-black text-[10px] uppercase shadow-lg shadow-blue-100 hover:bg-blue-700 transition">
+                Konsultasi Gratis
+            </a>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="menu-toggle" class="md:hidden p-2 text-slate-900 focus:outline-none">
+                <i data-lucide="menu" id="menu-icon" class="w-7 h-7"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="fixed inset-0 bg-white opacity-100 z-[60] translate-x-full transition-transform duration-500 md:hidden flex flex-col p-10">
+            <div class="flex justify-between items-center mb-16">
+                <img src="src/assets/images/Full.png" alt="Logo" class="h-14">
+                <button id="menu-close" class="p-2 text-slate-900">
+                    <i data-lucide="x" class="w-8 h-8"></i>
+                </button>
+            </div>
+            <div class="flex flex-col gap-8 text-2xl font-black italic uppercase text-slate-900">
+                <a href="#home" class="mobile-link">Home</a>
+                <a href="#services" class="mobile-link">Layanan</a>
+                <a href="#portfolio" class="mobile-link">Portfolio</a>
+                <a href="#advantages" class="mobile-link">Keunggulan</a>
+                <a href="#pricing" class="mobile-link">Harga</a>
+            </div>
+            <div class="mt-auto">
+                <a href="https://wa.me/085150762029" class="block text-center bg-blue-600 text-white py-5 rounded-[2rem] font-black uppercase tracking-widest text-sm shadow-xl">
+                    Hubungi Sekarang
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="pt-40 pb-20 px-6 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-blue-50/50 -z-10 rounded-l-[100px]"></div>
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right">
+                <span class="inline-block px-4 py-1.5 bg-blue-100 text-blue-600 rounded-full text-sm font-bold mb-6 italic">“Codenya Kita” — Digital Agency</span>
+                <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-6">
+                    Bangun Website <span class="text-blue-600">Modern</span> Untuk Bisnis Kamu
+                </h1>
+                <p class="text-lg text-slate-600 mb-8 max-w-lg italic">
+                    CODETA membantu bisnis tampil lebih profesional melalui website modern dan desain grafis premium yang berfokus pada konversi.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="https://wa.me/085150762029" class="bg-blue-600 text-white px-8 py-4 rounded-2xl font-bold text-lg shadow-xl shadow-blue-200 transition flex items-center gap-2">
+                        Hubungi Kami Sekarang <i data-lucide="arrow-right"></i>
+                    </a>
+                    <a href="#portfolio" class="bg-white border border-slate-200 text-slate-700 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-slate-50 transition">Lihat Portfolio</a>
+                </div>
+            </div>
+            <div class="relative" data-aos="zoom-in">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2426" alt="Mockup" class="rounded-[2.5rem] shadow-2xl border-8 border-white">
+                <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl hidden md:block">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center">
+                            <i data-lucide="check" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm text-slate-500 font-bold">Project Selesai</p>
+                            <p class="text-xl font-black italic">50+ Unit Website</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LAYANAN SECTION -->
+    <section id="services" class="py-24 bg-white text-center">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-blue-600 font-bold mb-3 uppercase tracking-widest text-xs" data-aos="fade-up">LAYANAN KAMI</h2>
+            <p class="text-4xl md:text-5xl font-extrabold mb-16 text-slate-900" data-aos="fade-up">Solusi Digital Untuk Bisnis Anda</p>
+            <div class="grid md:grid-cols-3 gap-8 text-left">
+                <div class="p-10 rounded-[2.5rem] bg-slate-50 border border-slate-100 card-shadow group" data-aos="fade-up">
+                    <div class="w-14 h-14 bg-blue-600 text-white rounded-2xl flex items-center justify-center mb-8"><i data-lucide="building-2"></i></div>
+                    <h3 class="text-xl font-bold mb-3 italic">Website Company Profile</h3>
+                    <p class="text-slate-500 text-sm">Website profesional untuk memperkenalkan perusahaan Anda ke dunia digital dengan desain elegan.</p>
+                </div>
+                <div class="p-10 rounded-[2.5rem] bg-slate-50 border border-slate-100 card-shadow group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 bg-blue-600 text-white rounded-2xl flex items-center justify-center mb-8"><i data-lucide="briefcase"></i></div>
+                    <h3 class="text-xl font-bold mb-3 italic">Website Portofolio</h3>
+                    <p class="text-slate-500 text-sm">Tampilkan karya terbaik Anda dengan desain yang menarik, clean, dan modern.</p>
+                </div>
+                <div class="p-10 rounded-[2.5rem] bg-slate-50 border border-slate-100 card-shadow group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 bg-blue-600 text-white rounded-2xl flex items-center justify-center mb-8"><i data-lucide="shopping-bag"></i></div>
+                    <h3 class="text-xl font-bold mb-3 italic text-slate-900">Website UMKM</h3>
+                    <p class="text-slate-500 text-sm">Solusi website untuk UMKM dengan harga terjangkau, landing page konversi tinggi.</p>
+                </div>
+                <div class="p-10 rounded-[2.5rem] bg-slate-50 border border-slate-100 card-shadow group" data-aos="fade-up">
+                    <div class="w-14 h-14 bg-blue-600 text-white rounded-2xl flex items-center justify-center mb-8"><i data-lucide="settings"></i></div>
+                    <h3 class="text-xl font-bold mb-3 italic">Web App Custom</h3>
+                    <p class="text-slate-500 text-sm">Aplikasi web sesuai kebutuhan bisnis Anda dengan fitur khusus dan sistem backend kuat.</p>
+                </div>
+                <div class="p-10 rounded-[2.5rem] bg-slate-50 border border-slate-100 card-shadow group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 bg-blue-600 text-white rounded-2xl flex items-center justify-center mb-8"><i data-lucide="layout"></i></div>
+                    <h3 class="text-xl font-bold mb-3 italic">Desain UI/UX</h3>
+                    <p class="text-slate-500 text-sm">Desain antarmuka user-friendly dan estetik untuk kenyamanan pengguna website Anda.</p>
+                </div>
+                <div class="p-10 rounded-[2.5rem] bg-slate-50 border border-slate-100 card-shadow group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 bg-blue-600 text-white rounded-2xl flex items-center justify-center mb-8"><i data-lucide="palette"></i></div>
+                    <h3 class="text-xl font-bold mb-3 italic">Desain Grafis</h3>
+                    <p class="text-slate-500 text-sm">Logo, banner, pamflet, hingga spanduk branding berkualitas premium.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO SECTION -->
+    <section id="portfolio" class="py-24 bg-slate-50 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-8">
+                <div data-aos="fade-right">
+                    <h2 class="text-blue-600 font-bold tracking-widest uppercase text-xs mb-3">PORTFOLIO PROJECT</h2>
+                    <p class="text-4xl font-extrabold text-slate-900 leading-tight">Karya Terbaik Kami</p>
+                </div>
+                <div class="flex bg-white p-1.5 rounded-2xl border border-slate-200" data-aos="fade-left">
+                    <button class="filter-btn active px-6 py-2 rounded-xl text-sm font-bold transition-all" onclick="filterPortfolio('all', this)">Semua</button>
+                    <button class="filter-btn px-6 py-2 rounded-xl text-sm font-bold transition-all" onclick="filterPortfolio('web', this)">Website</button>
+                    <button class="filter-btn px-6 py-2 rounded-xl text-sm font-bold transition-all" onclick="filterPortfolio('design', this)">Desain</button>
+                </div>
+            </div>
+
+            <div class="swiper portfolioSwiper py-5" data-aos="fade-up">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" data-category="web">
+                        <div class="bg-white rounded-[2.5rem] overflow-hidden border border-slate-100 card-shadow h-full flex flex-col group">
+                            <img src="src/assets/project/Chicken-fram.png" class="w-full aspect-video object-cover transition-transform group-hover:scale-105">
+                            <div class="p-8 flex flex-col flex-1">
+                                <span class="text-blue-600 text-[10px] font-bold uppercase mb-2 italic">Web Development</span>
+                                <h3 class="text-xl font-bold mb-4 italic">Chicken Fram - Ayam Kampung</h3>
+                                <p class="text-slate-500 text-sm mb-6 flex-1 italic">Penjualan ayam dan telur berkulitas.</p>
+                                <a href="https://cheeky-fram-mks.vercel.app/" class="inline-flex items-center gap-2 text-blue-600 font-bold text-xs">More Details <i data-lucide="plus-circle" class="w-4 h-4"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide" data-category="web">
+                        <div class="bg-white rounded-[2.5rem] overflow-hidden border border-slate-100 card-shadow h-full flex flex-col group">
+                            <img src="src/assets/project/Portofolio.png" class="w-full aspect-video object-cover transition-transform group-hover:scale-105">
+                            <div class="p-8 flex flex-col flex-1">
+                                <span class="text-blue-600 text-[10px] font-bold uppercase mb-2 italic">Web Development</span>
+                                <h3 class="text-xl font-bold mb-4 italic">Personal Portofolio</h3>
+                                <p class="text-slate-500 text-sm mb-6 flex-1 italic">Branding website personal untuk rekruter.</p>
+                                <a href="https://my-portofolio-peach-nu.vercel.app/" class="inline-flex items-center gap-2 text-blue-600 font-bold text-xs">More Details <i data-lucide="plus-circle" class="w-4 h-4"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide" data-category="design">
+                        <div class="bg-white rounded-[2.5rem] overflow-hidden border border-slate-100 card-shadow h-full flex flex-col group">
+                            <img src="src/assets/project/T-Shirt MockUp_Back.png" class="w-full aspect-video object-cover transition-transform group-hover:scale-105">
+                            <div class="p-8 flex flex-col flex-1">
+                                <span class="text-blue-600 text-[10px] font-bold uppercase mb-2 italic">Desain Baju</span>
+                                <h3 class="text-xl font-bold mb-4 italic">T-Shirt MONITORING</h3>
+                                <p class="text-slate-500 text-sm mb-6 flex-1 italic">Poster menu Gado-gado dan Soto Ayam</p>
+                                <a href="https://drive.google.com/file/d/1Q0c9HM5yah1opoX0vnY_tP-L_pcUOFOt/view?usp=sharing" class="inline-flex items-center gap-2 text-blue-600 font-bold text-sm">More Details <i data-lucide="plus-circle" class="w-5 h-5"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide" data-category="design">
+                        <div class="bg-white rounded-[2.5rem] overflow-hidden border border-slate-100 card-shadow h-full flex flex-col group">
+                            <img src="src/assets/project/T-Shirt MockUp_Front_Galactic Steal Daisy.png" class="w-full aspect-video object-cover transition-transform group-hover:scale-105">
+                            <div class="p-8 flex flex-col flex-1">
+                                <span class="text-blue-600 text-[10px] font-bold uppercase mb-2 italic">Desain Baju</span>
+                                <h3 class="text-xl font-bold mb-4 italic">T-Shirt Glactic Stel</h3>
+                                <p class="text-slate-500 text-sm mb-6 flex-1 italic">Desain website platfrom pembelajaran .</p>
+                                <a href="https://drive.google.com/file/d/1lE2LKqrJ_6wArQPDy4RuLo1FDYZ3Dr2m/view?usp=sharing" class="inline-flex items-center gap-2 text-blue-600 font-bold text-sm">More Details <i data-lucide="plus-circle" class="w-5 h-5"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination !static mt-10"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KEUNGGULAN SECTION (LENGKAP SESUAI GAMBAR) -->
+    <section id="advantages" class="py-24 bg-[#0a1128] text-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Sisi Kiri -->
+                <div data-aos="fade-right">
+                    <h2 class="text-blue-500 font-bold mb-4 uppercase tracking-widest text-[10px]">KEUNGGULAN CODE TA</h2>
+                    <p class="text-4xl md:text-5xl font-extrabold mb-8 leading-tight italic">Solusi Digital <span class="text-blue-500 italic">Tanpa Kompromi</span></p>
+                    <p class="text-slate-400 text-lg mb-10 leading-relaxed italic">Kami menggabungkan estetika desain dan performa teknologi untuk memastikan brand Anda tampil dominan di pasar digital.</p>
+                    <div class="space-y-6">
+                        <div class="flex gap-4 items-center">
+                            <div class="w-8 h-8 bg-blue-600/20 text-blue-500 rounded-lg flex items-center justify-center shrink-0">
+                                <i data-lucide="check-circle" class="w-5 h-5"></i>
+                            </div>
+                            <p class="text-slate-200 font-bold italic">Harga Terjangkau & Transparan</p>
+                        </div>
+                        <div class="flex gap-4 items-center">
+                            <div class="w-8 h-8 bg-blue-600/20 text-blue-500 rounded-lg flex items-center justify-center shrink-0">
+                                <i data-lucide="zap" class="w-5 h-5"></i>
+                            </div>
+                            <p class="text-slate-200 font-bold italic">Pengerjaan Cepat & Tepat Waktu</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sisi Kanan (6 POIN LENGKAP) -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 relative" data-aos="fade-left">
+                    <!-- 1 -->
+                    <div class="bg-slate-800/40 p-8 rounded-[2rem] border border-slate-700 hover:border-blue-500 transition-all duration-300">
+                        <i data-lucide="smartphone" class="text-blue-500 mb-6 w-8 h-8"></i>
+                        <h4 class="font-bold text-lg mb-3 italic">Modern Responsif</h4>
+                        <p class="text-slate-400 text-sm">Tampilan optimal di desktop hingga smartphone.</p>
+                    </div>
+                    <!-- 2 -->
+                    <div class="bg-slate-800/40 p-8 rounded-[2rem] border border-slate-700 hover:border-blue-500 transition-all duration-300 sm:mt-8">
+                        <i data-lucide="shield-check" class="text-blue-500 mb-6 w-8 h-8"></i>
+                        <h4 class="font-bold text-lg mb-3 italic">After-service Support</h4>
+                        <p class="text-slate-400 text-sm">Dukungan teknis berkala setelah website online.</p>
+                    </div>
+                    <!-- 3 -->
+                    <div class="bg-slate-800/40 p-8 rounded-[2rem] border border-slate-700 hover:border-blue-500 transition-all duration-300">
+                        <i data-lucide="gift" class="text-blue-500 mb-6 w-8 h-8"></i>
+                        <h4 class="font-bold text-lg mb-3 italic">Gratis Domain & Hosting</h4>
+                        <p class="text-slate-400 text-sm italic italic">Tersedia untuk paket tertentu (S&K berlaku).</p>
+                    </div>
+                    <!-- 4 -->
+                    <div class="bg-slate-800/40 p-8 rounded-[2rem] border border-slate-700 hover:border-blue-500 transition-all duration-300 sm:mt-8">
+                        <i data-lucide="brush" class="text-blue-500 mb-6 w-8 h-8"></i>
+                        <h4 class="font-bold text-lg mb-3 italic">Desain Profesional</h4>
+                        <p class="text-slate-400 text-sm italic italic">Identitas visual brand dengan kualitas tinggi.</p>
+                    </div>
+                    <!-- STAT BOX (KOTAK BIRU 100%) -->
+                    <div class="sm:col-span-2 bg-blue-600 p-10 rounded-[3rem] text-center mt-4">
+                        <p class="text-7xl font-black italic tracking-tighter mb-2">100%</p>
+                        <p class="text-xl font-bold uppercase italic tracking-widest">Client Satisfaction</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="py-24 px-6 bg-white">
+        <div class="max-w-7xl mx-auto bg-blue-600 rounded-[4rem] p-12 md:p-24 text-center text-white relative overflow-hidden shadow-2xl shadow-blue-300">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -mr-32 -mt-32"></div>
+            <div class="relative z-10">
+                <h2 class="text-4xl md:text-6xl font-black mb-8 italic leading-tight" data-aos="fade-up">Siap Mewujudkan Bisnis Digital Impianmu?</h2>
+                <p class="text-blue-100 text-lg mb-12 italic italic max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">Dapatkan konsultasi gratis dan penawaran harga terbaik khusus untuk project pertama Anda bersama CODETA (Codenya kiTA).</p>
+                <div class="flex flex-col md:flex-row justify-center gap-6" data-aos="fade-up" data-aos-delay="200">
+                    <a href="https://wa.me/085150762029" class="bg-white text-blue-600 px-10 py-5 rounded-2xl font-black uppercase tracking-wider text-sm shadow-xl hover:scale-105 transition-all flex items-center justify-center gap-3">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> Hubungi Kami Sekarang
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING WEBSITE -->
+    <section id="pricing" class="py-24 bg-white text-center">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-extrabold mb-4 italic text-slate-900 uppercase">Paket Website</h2>
+            <p class="text-slate-500 mb-16 italic text-sm">Investasi terbaik untuk masa depan digital bisnis Anda.</p>
+            <div class="grid md:grid-cols-3 gap-8 items-start">
+                <!-- Basic -->
+                <div class="bg-white p-10 rounded-[2.5rem] border border-slate-200 card-shadow text-left" data-aos="fade-up">
+                    <h3 class="text-xl font-bold mb-2 italic">Basic</h3>
+                    <div class="text-4xl font-extrabold mb-6 text-blue-600">Rp 1,5 Juta</div>
+                    <ul class="space-y-4 mb-10 text-slate-600 text-sm italic italic">
+                        <li><i data-lucide="check" class="inline text-green-500 mr-2 w-4 h-4"></i> Landing Page / UMKM</li>
+                        <li><i data-lucide="check" class="inline text-green-500 mr-2 w-4 h-4"></i> Desain Responsif</li>
+                        <li><i data-lucide="check" class="inline text-green-500 mr-2 w-4 h-4"></i> Maksimal 5 Halaman</li>
+                        <li><i data-lucide="check" class="inline text-green-500 mr-2 w-4 h-4"></i> Gratis Revisi 1x</li>
+                        <li><i data-lucide="check" class="inline text-green-500 mr-2 w-4 h-4"></i> Pengerjaan 7-10 Hari</li>
+                        <li><i data-lucide="check" class="inline text-green-500 mr-2 w-4 h-4"></i> Support 1 Bulan</li>
+                    </ul>
+                    <a href="https://wa.me/085150762029" class="block text-center py-4 border-2 border-blue-600 text-blue-600 rounded-2xl font-bold hover:bg-blue-600 hover:text-white transition">Pilih Paket</a>
+                </div>
+                <!-- Standard -->
+                <div class="bg-white p-10 rounded-[2.5rem] border-4 border-blue-600 card-shadow scale-105 relative z-10 text-left" data-aos="fade-up" data-aos-delay="100">
+                    <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-blue-600 text-white px-6 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">POPULER</div>
+                    <h3 class="text-xl font-bold mb-2 italic text-blue-600 uppercase">Standard</h3>
+                    <div class="text-4xl font-extrabold mb-6 text-blue-600">Rp 3 Juta</div>
+                    <ul class="space-y-4 mb-10 text-slate-600 text-sm italic italic">
+                        <li><i data-lucide="check" class="inline text-green-500 mr-2 w-4 h-4"></i> Company Profile/Portfolio</li>
+                        <li><i data-lucide="check" class="inline text-green-500 mr-2 w-4 h-4"></i> Desain Responsif Premium</li>
+                        <li><i data-lucide="check" class="inline text-green-500 mr-2 w-4 h-4"></i> Maksimal 10 Halaman</li>
+                        <li><i data-lucide="check" class="inline text-green-500 mr-2 w-4 h-4"></i> Gratis Revisi 2X</li>
+                        <li><i data-lucide="check" class="inline text-green-500 mr-2 w-4 h-4"></i> Pengerjaan 10-14 Hari</li>
+                        <li><i data-lucide="check" class="inline text-green-500 mr-2 w-4 h-4"></i> Support 3 Bulan</li>
+                        <li><i data-lucide="check" class="inline text-green-500 mr-2 w-4 h-4"></i> Gratis Domain .com (1 tahun)</li>
+                        <li><i data-lucide="check" class="inline text-green-500 mr-2 w-4 h-4"></i> SEO Basic</li>
+                    </ul>
+                    <a href="https://wa.me/085150762029" class="block text-center py-4 bg-blue-600 text-white rounded-2xl font-bold shadow-xl shadow-blue-200 transition">Pilih Paket</a>
+                </div>
+                <!-- Premium -->
+                <div class="bg-white p-10 rounded-[2.5rem] border border-slate-200 card-shadow text-left" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-xl font-bold mb-2 italic">Premium</h3>
+                    <div class="text-4xl font-extrabold mb-6 text-blue-600">Rp 5 Juta+</div>
+                    <ul class="space-y-4 mb-10 text-slate-600 text-sm italic italic">
+                        <li><i data-lucide="check" class="inline text-green-500 mr-2 w-4 h-4"></i> Web App Custom</li>
+                        <li><i data-lucide="check" class="inline text-green-500 mr-2 w-4 h-4"></i> UI/UX Design Custom</li>
+                        <li><i data-lucide="check" class="inline text-green-500 mr-2 w-4 h-4"></i> Halaman Unlimited</li>
+                        <li><i data-lucide="check" class="inline text-green-500 mr-2 w-4 h-4"></i> Gratis Revisi 3X</li>
+                        <li><i data-lucide="check" class="inline text-green-500 mr-2 w-4 h-4"></i> Hosting & Domain 1 Thn</li>
+                        <li><i data-lucide="check" class="inline text-green-500 mr-2 w-4 h-4"></i> Support 6 Bulan</li>
+                        <li><i data-lucide="check" class="inline text-green-500 mr-2 w-4 h-4"></i> SEO Advanced</li>
+                    </ul>
+                    <a href="https://wa.me/085150762029" class="block text-center py-4 border-2 border-blue-600 text-blue-600 rounded-2xl font-bold hover:bg-blue-600 hover:text-white transition">Pilih Paket</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING GRAPHIC -->
+    <section class="pb-24 bg-white text-center px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-extrabold mb-16 italic uppercase text-slate-900">Paket Desain Grafis</h2>
+            <div class="grid md:grid-cols-2 gap-12 text-left">
+                <!-- Basic -->
+                <div class="bg-white p-12 rounded-[3rem] border border-slate-100 shadow-xl" data-aos="fade-right">
+                    <h4 class="text-slate-400 font-bold mb-2 tracking-widest italic text-xs uppercase">Graphic Basic</h4>
+                    <div class="text-4xl font-extrabold mb-8 uppercase text-slate-900 italic">Rp 300rb+</div>
+                    <ul class="space-y-4 mb-12 text-slate-500 text-sm italic">
+                        <li><i data-lucide="star" class="inline w-3 h-3 text-yellow-500 mr-2"></i> Desain Logo (2 Konsep)</li>
+                        <li><i data-lucide="star" class="inline w-3 h-3 text-yellow-500 mr-2"></i> Banner / Pamflet (1 Desain)</li>
+                        <li><i data-lucide="star" class="inline w-3 h-3 text-yellow-500 mr-2"></i> File PNG & JPG</li>
+                        <li><i data-lucide="star" class="inline w-3 h-3 text-yellow-500 mr-2"></i> Revisi 2X</li>
+                        <li><i data-lucide="star" class="inline w-3 h-3 text-yellow-500 mr-2"></i> Pengerjaan 3-5 Hari</li>
+                    </ul>
+                    <a href="https://wa.me/085150762029" class="block text-center py-4 bg-slate-900 text-white rounded-2xl font-bold uppercase transition hover:bg-slate-800 italic">Tanya Harga</a>
+                </div>
+                <!-- Premium -->
+                <div class="bg-white p-12 rounded-[3rem] border-4 border-yellow-500 shadow-2xl relative" data-aos="fade-left">
+                    <div class="absolute -top-4 right-10 bg-yellow-500 text-white px-6 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase italic">REKOMENDASI</div>
+                    <h4 class="text-yellow-600 font-bold mb-2 tracking-widest italic text-xs uppercase">Graphic Premium</h4>
+                    <div class="text-4xl font-extrabold mb-8 uppercase text-slate-900 italic">Rp 800rb+</div>
+                    <ul class="space-y-4 mb-12 text-slate-500 text-sm italic italic">
+                        <li><i data-lucide="check" class="inline w-4 h-4 text-green-500 mr-2"></i> Desain Logo (5 Konsep)</li>
+                        <li><i data-lucide="check" class="inline w-4 h-4 text-green-500 mr-2"></i> Banner, Pamflet, Spanduk</li>
+                        <li><i data-lucide="check" class="inline w-4 h-4 text-green-500 mr-2"></i> Desain Sablon Kaos</li>
+                        <li><i data-lucide="check" class="inline w-4 h-4 text-green-500 mr-2"></i> File Master (AI, PDF, PNG, JPG)</li>
+                        <li><i data-lucide="check" class="inline w-4 h-4 text-green-500 mr-2"></i> Brand Guidelines</li>
+                        <li><i data-lucide="check" class="inline w-4 h-4 text-green-500 mr-2"></i> Pengerjaan 5-7 Hari</li>
+                        <li><i data-lucide="check" class="inline w-4 h-4 text-green-500 mr-2"></i> Revisi Unlimited</li>
+                    </ul>
+                    <a href="https://wa.me/085150762029" class="block text-center py-4 bg-yellow-500 text-white rounded-2xl font-bold shadow-xl shadow-yellow-100 uppercase italic transition hover:bg-yellow-600">Tanya Harga</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+<section id="faq" class="py-24 bg-white">
+    <div class="max-w-4xl mx-auto px-6">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-blue-600 font-black mb-3 uppercase tracking-[0.3em] text-[10px]">Support by CODETA</h2>
+            <p class="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight italic">Frequently Asked Questions</p>
+        </div>
+
+        <div class="space-y-4">
+            <!-- FAQ Item 1 -->
+            <div class="faq-item rounded-[2.5rem] bg-[#f4f7ff] border border-transparent transition-all duration-300">
+                <button class="w-full p-8 md:p-10 flex justify-between items-center text-left outline-none" onclick="toggleFaq(this)">
+                    <span class="font-bold text-lg md:text-xl text-slate-800 pr-4">Berapa lama proses pembuatan website?</span>
+                    <div class="w-10 h-10 md:w-12 md:h-12 bg-white rounded-full flex items-center justify-center shadow-sm shrink-0">
+                        <i data-lucide="plus" class="w-5 h-5 text-slate-900 faq-icon transition-transform duration-300"></i>
+                    </div>
+                </button>
+                <div class="faq-answer overflow-hidden transition-all duration-300 max-h-0">
+                    <div class="px-10 md:px-12 pb-10 text-slate-500 text-sm md:text-base leading-relaxed italic">
+                        Proses pengerjaan website Landing Page/UMKM biasanya memakan waktu 7-10 hari. Untuk website custom perusahaan atau dashboard sistem yang lebih kompleks, memerlukan waktu sekitar 14-30 hari kerja.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Item 2 -->
+            <div class="faq-item rounded-[2.5rem] bg-[#f4f7ff] border border-transparent transition-all duration-300">
+                <button class="w-full p-8 md:p-10 flex justify-between items-center text-left outline-none" onclick="toggleFaq(this)">
+                    <span class="font-bold text-lg md:text-xl text-slate-800 pr-4">Apakah harga sudah termasuk domain & hosting?</span>
+                    <div class="w-10 h-10 md:w-12 md:h-12 bg-white rounded-full flex items-center justify-center shadow-sm shrink-0">
+                        <i data-lucide="plus" class="w-5 h-5 text-slate-900 faq-icon transition-transform duration-300"></i>
+                    </div>
+                </button>
+                <div class="faq-answer overflow-hidden transition-all duration-300 max-h-0">
+                    <div class="px-10 md:px-12 pb-10 text-slate-500 text-sm md:text-base leading-relaxed italic">
+                        Ya, untuk paket Standard dan Premium kami sudah menyertakan gratis domain (.com) dan cloud hosting selama 1 tahun pertama untuk memastikan bisnis Anda langsung online.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Item 3 -->
+            <div class="faq-item rounded-[2.5rem] bg-[#f4f7ff] border border-transparent transition-all duration-300">
+                <button class="w-full p-8 md:p-10 flex justify-between items-center text-left outline-none" onclick="toggleFaq(this)">
+                    <span class="font-bold text-lg md:text-xl text-slate-800 pr-4">Apakah website bisa diupdate sendiri?</span>
+                    <div class="w-10 h-10 md:w-12 md:h-12 bg-white rounded-full flex items-center justify-center shadow-sm shrink-0">
+                        <i data-lucide="plus" class="w-5 h-5 text-slate-900 faq-icon transition-transform duration-300"></i>
+                    </div>
+                </button>
+                <div class="faq-answer overflow-hidden transition-all duration-300 max-h-0">
+                    <div class="px-10 md:px-12 pb-10 text-slate-500 text-sm md:text-base leading-relaxed italic">
+                        Ya, Kami bisa buatkan website dengan CMS (COnten Management System) sehingga Anda bisa update konten sendiri tanpa coding.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Item 4 -->
+            <div class="faq-item rounded-[2.5rem] bg-[#f4f7ff] border border-transparent transition-all duration-300">
+                <button class="w-full p-8 md:p-10 flex justify-between items-center text-left outline-none" onclick="toggleFaq(this)">
+                    <span class="font-bold text-lg md:text-xl text-slate-800 pr-4">Bagaimana jika saya ingin revisi desain?</span>
+                    <div class="w-10 h-10 md:w-12 md:h-12 bg-white rounded-full flex items-center justify-center shadow-sm shrink-0">
+                        <i data-lucide="plus" class="w-5 h-5 text-slate-900 faq-icon transition-transform duration-300"></i>
+                    </div>
+                </button>
+                <div class="faq-answer overflow-hidden transition-all duration-300 max-h-0">
+                    <div class="px-10 md:px-12 pb-10 text-slate-500 text-sm md:text-base leading-relaxed italic">
+                        Kami memberikan jatah revisi sesuai paket yang dipilih. Tim kami akan bekerja sama dengan Anda sampai desain benar-benar sesuai dengan visi bisnis Anda.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Item 5 -->
+            <div class="faq-item rounded-[2.5rem] bg-[#f4f7ff] border border-transparent transition-all duration-300">
+                <button class="w-full p-8 md:p-10 flex justify-between items-center text-left outline-none" onclick="toggleFaq(this)">
+                    <span class="font-bold text-lg md:text-xl text-slate-800 pr-4">Bagaimana sistem pembayaran?</span>
+                    <div class="w-10 h-10 md:w-12 md:h-12 bg-white rounded-full flex items-center justify-center shadow-sm shrink-0">
+                        <i data-lucide="plus" class="w-5 h-5 text-slate-900 faq-icon transition-transform duration-300"></i>
+                    </div>
+                </button>
+                <div class="faq-answer overflow-hidden transition-all duration-300 max-h-0">
+                    <div class="px-10 md:px-12 pb-10 text-slate-500 text-sm md:text-base leading-relaxed italic">
+                        Pembayaran bisa dilakukan dengan sistem DP 50% di awal dan pelunasan 50 % setelah website selesai. Kami terima transfer bank dan e-wallet.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Item 6 -->
+            <div class="faq-item rounded-[2.5rem] bg-[#f4f7ff] border border-transparent transition-all duration-300">
+                <button class="w-full p-8 md:p-10 flex justify-between items-center text-left outline-none" onclick="toggleFaq(this)">
+                    <span class="font-bold text-lg md:text-xl text-slate-800 pr-4">Apakah ada garansi?</span>
+                    <div class="w-10 h-10 md:w-12 md:h-12 bg-white rounded-full flex items-center justify-center shadow-sm shrink-0">
+                        <i data-lucide="plus" class="w-5 h-5 text-slate-900 faq-icon transition-transform duration-300"></i>
+                    </div>
+                </button>
+                <div class="faq-answer overflow-hidden transition-all duration-300 max-h-0">
+                    <div class="px-10 md:px-12 pb-10 text-slate-500 text-sm md:text-base leading-relaxed italic">
+                        Ya, Kami memberikan garansi bug fixing dan support sesuai dengan paket yang Anda pilih.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- FOOTER REVISI FINAL -->
+<!-- FOOTER REVISI FINAL SESUAI GAMBAR -->
+<footer class="bg-white py-16 px-4 md:px-10 border-t border-slate-100">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-stretch">
+        
+        <!-- KOLOM 1: BRAND & FOLLOW US -->
+        <div class="md:w-1/4 pr-8 mb-10 md:mb-0 flex flex-col justify-between">
+            <div>
+                <!-- Ukuran Logo 1:1 diperbesar -->
+                <img src="src/assets/images/Horizontal.png" alt="CODETA Logo" class="h-28 w-auto object-contain mb-2 -ml-0">
+            </div>
+            
+            <div class="mt-12">
+                <!-- Social Media Icons (Menggunakan Font Awesome agar pasti muncul) -->
+                <div class="flex gap-3 mb-4">
+                    <!-- Facebook (Solid Blue) -->
+                    <a href="https://www.facebook.com/profile.php?id=61589659251472" class="w-10 h-10 rounded-full bg-blue-600 shadow-lg shadow-blue-200 flex items-center justify-center text-white transition hover:scale-110">
+                        <i class="fa-brands fa-facebook-f text-lg"></i>
+                    </a>
+                    <!-- Instagram (Outline) -->
+                    <a href="https://www.instagram.com/codenyakita/" class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-blue-600 hover:bg-blue-50 transition hover:scale-110">
+                        <i class="fa-brands fa-instagram text-lg"></i>
+                    </a>
+                    <!-- Tiktok (Outline) -->
+                    <a href="https://www.tiktok.com/@codenyakita" class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-blue-600 hover:bg-blue-50 transition hover:scale-110">
+                        <i class="fa-brands fa-tiktok text-lg"></i>
+                    </a>
+                    <!-- Github (Outline) -->
+                    <a href="https://github.com/codeta-codenyakita" class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-blue-600 hover:bg-blue-50 transition hover:scale-110">
+                        <i class="fa-brands fa-github text-lg"></i>
+                    </a>
+                </div>
+                <h4 class="font-extrabold text-slate-900 uppercase tracking-widest text-xs italic">FOLLOW US</h4>
+            </div>
+        </div>
+
+        <!-- KOLOM 2: NAVIGASI & ABOUT (DENGAN GARIS PEMBATAS KIRI-KANAN) -->
+        <div class="md:w-2/4 md:border-l md:border-r border-slate-100 px-6 md:px-12 flex flex-col justify-between">
+            <!-- Nav Menu -->
+            <nav class="flex flex-wrap justify-between gap-4 mb-14">
+                <a href="#home" class="text-blue-600 font-bold text-xs uppercase tracking-widest transition hover:underline">Home</a>
+                <a href="#services" class="text-slate-900 font-bold text-xs uppercase tracking-widest hover:text-blue-600 transition">Layanan</a>
+                <a href="#portfolio" class="text-slate-900 font-bold text-xs uppercase tracking-widest hover:text-blue-600 transition">Portfolio</a>
+                <a href="#advantages" class="text-slate-900 font-bold text-xs uppercase tracking-widest hover:text-blue-600 transition">Keunggulan</a>
+                <a href="#pricing" class="text-slate-900 font-bold text-xs uppercase tracking-widest hover:text-blue-600 transition">Harga</a>
+                <a href="#faq" class="text-slate-900 font-bold text-xs uppercase tracking-widest hover:text-blue-600 transition">FAQ</a>
+            </nav>
+
+            <!-- About Us Text -->
+            <div>
+                <h3 class="text-lg font-black text-slate-900 mb-4 uppercase italic tracking-wider">ABOUT US</h3>
+                <p class="text-slate-400 text-[13px] leading-relaxed italic text-justify">
+                    CODETA (Codenya Kita) adalah digital agency yang berfokus pada pembuatan website modern, sistem aplikasi web custom, dan desain grafis premium. Kami berkomitmen membantu pelaku bisnis meningkatkan trust dan branding melalui solusi digital yang profesional, responsif, dan tepat sasaran.
+                </p>
+            </div>
+        </div>
+
+        <!-- KOLOM 3: CONTACT & NEWSLETTER -->
+        <div class="md:w-1/4 pl-6 md:pl-12 flex flex-col justify-between">
+            <div class="space-y-8 flex-1">
+                <div>
+                    <p class="text-slate-900 font-black text-[11px] uppercase tracking-widest italic mb-2">CALL :</p>
+                    <p class="text-slate-500 font-bold text-sm tracking-wide">085150762029</p>
+                </div>
+                <div>
+                    <p class="text-slate-900 font-black text-[11px] uppercase tracking-widest italic mb-2">EMAIL :</p>
+                    <a href="mailto:codeta2002@gmail.com" class="text-blue-600 font-bold text-sm tracking-wide underline decoration-blue-200 underline-offset-4 transition hover:text-blue-800 italic">codeta2002@gmail.com</a>
+                </div>
+            </div>
+
+            <!-- Write Email Input Box -->
+            <div class="mt-12">
+                <div class="flex items-center">
+                    <input type="email" placeholder="Write Email" class="w-full bg-slate-50 text-[11px] p-4 rounded-l-sm focus:outline-none border-none font-bold italic">
+                    <button class="bg-blue-600 text-white p-4 rounded-r-sm hover:bg-blue-700 transition flex items-center justify-center">
+                        <i class="fa-solid fa-play text-[10px]"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- COPYRIGHT PALING BAWAH -->
+    <div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-slate-50 text-center">
+        <p class="text-slate-300 text-[10px] font-bold uppercase tracking-[0.3em]">
+            © 2025 CODETA (Codenya Kita). All rights reserved.
+        </p>
+    </div>
+</footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="src/js/index.js"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+</body>
+</html>
